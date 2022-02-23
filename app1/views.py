@@ -9,7 +9,6 @@ from django.contrib import messages
 
 # Create your views here.
 def homepage(request):
-    print("In HomePage")
 	return render(request, "home.html")
 
 def contact(request):
