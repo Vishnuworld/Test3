@@ -15,8 +15,9 @@ def homepage(request):
 def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
+        print(form)
         if form.is_valid():
-            subject = "Test Website Inquiry" 
+            sub = "Test Mail"
             body = {
             'first_name': form.cleaned_data['first_name'], 
             'last_name': form.cleaned_data['last_name'], 
@@ -25,7 +26,7 @@ def contact(request):
             }
             message = "\n".join(body.values())
             try:
-                send_mail(subject, message, 'admin@example.com', ['admin@example.com', 'abc@gmail.com']) 
+                send_mail(sub, message, 'admin@example.com', ['admin@example.com', 'abc@gmail.com']) 
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             messages.success(request, "Email sent succesfully." )
