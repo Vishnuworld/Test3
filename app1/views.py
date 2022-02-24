@@ -35,3 +35,9 @@ def contact(request):
         return redirect ("homepage")
     form = ContactForm()
     return render(request, "contact.html", {'cont_form':form})
+
+
+def func():
+    return None
+
+print("asd")
