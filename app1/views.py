@@ -9,10 +9,10 @@ from django.contrib import messages
 
 # Create your views here.
 def homepage(request):
-    print("home page......! ")
     return render(request, "home.html")
 
 def contact(request):
+    """in contact fbv"""
     if request.method == 'POST':
         form = ContactForm(request.POST)
         print(form)
@@ -35,3 +35,7 @@ def contact(request):
         return redirect ("homepage")
     form = ContactForm()
     return render(request, "contact.html", {'cont_form':form})
+
+
+def func3():
+    print("in func3")
