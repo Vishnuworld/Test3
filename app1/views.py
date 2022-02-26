@@ -10,9 +10,11 @@ from django.contrib import messages
 # Create your views here.
 def homepage(request):
     print("home page......! ")
-    return render(request, "home.html")
+    context = {}
+    return render(request, "home.html", context=context)
 
 def contact(request):
+    """contact function based view"""
     if request.method == 'POST':
         form = ContactForm(request.POST)
         print(form)
@@ -41,3 +43,8 @@ def func():
     return None
 
 print("asd")
+def func3():
+    print("in func3")
+    
+def func1():
+    print("in func1")
