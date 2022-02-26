@@ -48,3 +48,7 @@ def func3():
     
 def func1():
     print("in func1")
+
+
+def func4():
+    print("in func4")
